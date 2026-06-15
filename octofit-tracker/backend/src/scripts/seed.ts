@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 
+import { mongoUri } from '../config/database';
 import ActivityModel, { Activity } from '../models/Activity';
 import LeaderboardEntryModel, { LeaderboardEntry } from '../models/LeaderboardEntry';
 import TeamModel, { Team } from '../models/Team';
@@ -8,8 +9,6 @@ import UserModel, { User } from '../models/User';
 import WorkoutModel, { Workout } from '../models/Workout';
 
 dotenv.config();
-
-const mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/octofit_db';
 
 const users: User[] = [
   {
