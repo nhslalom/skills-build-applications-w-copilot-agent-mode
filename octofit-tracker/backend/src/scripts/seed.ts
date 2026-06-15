@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
 
-import { mongoUri } from '../config/database';
+import { connectDatabase, disconnectDatabase } from '../config/database';
 import ActivityModel, { Activity } from '../models/Activity';
 import LeaderboardEntryModel, { LeaderboardEntry } from '../models/LeaderboardEntry';
 import TeamModel, { Team } from '../models/Team';
@@ -123,7 +122,7 @@ const workouts: Workout[] = [
 
 const seedDatabase = async () => {
   console.log('Seed the octofit_db database with test data');
-  await mongoose.connect(mongoUri);
+  await connectDatabase();
 
   await Promise.all([
     UserModel.deleteMany({}),
@@ -150,11 +149,11 @@ const seedDatabase = async () => {
 
 seedDatabase()
   .then(async () => {
-    await mongoose.disconnect();
+    await disconnectDatabase();
     console.log('Database seed completed');
   })
   .catch(async (error) => {
     console.error('Database seed failed:', error);
-    await mongoose.disconnect();
+    await disconnectDatabase();
     process.exit(1);
   });

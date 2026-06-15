@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const express_1 = __importDefault(require("express"));
-const mongoose_1 = __importDefault(require("mongoose"));
 const database_1 = require("./config/database");
 const activities_1 = __importDefault(require("./routes/activities"));
 const leaderboard_1 = __importDefault(require("./routes/leaderboard"));
@@ -45,7 +44,7 @@ app.use('/api/leaderboard', leaderboard_1.default);
 app.use('/api/workouts', workouts_1.default);
 const startServer = async () => {
     try {
-        await mongoose_1.default.connect(database_1.mongoUri);
+        await (0, database_1.connectDatabase)();
         app.listen(port, () => {
             console.log(`Backend listening on port ${port}`);
         });

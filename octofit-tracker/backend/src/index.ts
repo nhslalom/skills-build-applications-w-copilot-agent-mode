@@ -1,9 +1,8 @@
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
-import mongoose from 'mongoose';
 
-import { mongoUri } from './config/database';
+import { connectDatabase } from './config/database';
 import activitiesRouter from './routes/activities';
 import leaderboardRouter from './routes/leaderboard';
 import teamsRouter from './routes/teams';
@@ -48,7 +47,7 @@ app.use('/api/workouts', workoutsRouter);
 
 const startServer = async () => {
   try {
-    await mongoose.connect(mongoUri);
+    await connectDatabase();
     app.listen(port, () => {
       console.log(`Backend listening on port ${port}`);
     });
