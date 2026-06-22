@@ -47,16 +47,23 @@ export default function Activities() {
       ) : (
         <div className="row">
           {activities.map((activity) => (
-            <div key={activity._id} className="col-md-4 mb-3">
+            <div
+              key={activity._id || `${activity.user}-${activity.completedAt}`}
+              className="col-md-4 mb-3"
+            >
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">{activity.type || 'Activity'}</h5>
+                  <h5 className="card-title">
+                    {activity.activityType || 'Activity'}
+                  </h5>
                   <p className="card-text">
-                    {activity.duration ? `Duration: ${activity.duration} min` : 'N/A'}
+                    {activity.durationMinutes
+                      ? `Duration: ${activity.durationMinutes} min`
+                      : 'N/A'}
                   </p>
                   <p className="card-text">
-                    {activity.date
-                      ? `Date: ${new Date(activity.date).toLocaleDateString()}`
+                    {activity.completedAt
+                      ? `Date: ${new Date(activity.completedAt).toLocaleDateString()}`
                       : 'N/A'}
                   </p>
                 </div>

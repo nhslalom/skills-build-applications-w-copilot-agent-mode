@@ -80,38 +80,27 @@ The API client (`apiConfig.js`) handles both:
 
 ### Installation
 
-```bash
-cd octofit-tracker/frontend
-npm install
-```
+    npm install --prefix octofit-tracker/frontend
 
 ### Development Server
 
-```bash
-npm run dev
-```
+    npm --prefix octofit-tracker/frontend run dev
 
 The application will be available at `http://localhost:5173` (Vite default port).
 
 ### Building for Production
 
-```bash
-npm run build
-```
+    npm --prefix octofit-tracker/frontend run build
 
 Output will be in the `dist/` directory.
 
 ### Preview Production Build
 
-```bash
-npm run preview
-```
+    npm --prefix octofit-tracker/frontend run preview
 
 ### Linting
 
-```bash
-npm run lint
-```
+    npm --prefix octofit-tracker/frontend run lint
 
 ## Navigation
 

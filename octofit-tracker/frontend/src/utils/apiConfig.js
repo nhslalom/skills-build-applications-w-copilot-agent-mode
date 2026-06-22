@@ -38,12 +38,13 @@ export const fetchApi = async (endpoint, options = {}) => {
   const url = `${apiConfig.baseUrl}${endpoint}`;
 
   try {
+    const { headers, ...rest } = options;
     const response = await fetch(url, {
+      ...rest,
       headers: {
         'Content-Type': 'application/json',
-        ...options.headers,
+        ...headers,
       },
-      ...options,
     });
 
     if (!response.ok) {

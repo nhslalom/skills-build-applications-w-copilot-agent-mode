@@ -86,20 +86,19 @@ VITE_CODESPACE_NAME=john-xyz-123
 
 ### Running Development Server
 ```bash
-cd octofit-tracker/frontend
-npm run dev
+npm --prefix octofit-tracker/frontend run dev
 # Runs at http://localhost:5173
 ```
 
 ### Building for Production
 ```bash
-npm run build
+npm --prefix octofit-tracker/frontend run build
 # Output in dist/ directory
 ```
 
 ### Checking Code Quality
 ```bash
-npm run lint
+npm --prefix octofit-tracker/frontend run lint
 # Uses ESLint to check code
 ```
 

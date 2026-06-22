@@ -56,10 +56,10 @@ export default function Users() {
           </thead>
           <tbody>
             {users.map((user) => (
-              <tr key={user._id}>
-                <td>{user.name || 'Unknown'}</td>
+              <tr key={user._id || user.username}>
+                <td>{user.displayName || user.username || 'Unknown'}</td>
                 <td>{user.email || 'N/A'}</td>
-                <td>{user.teamId?.name || user.teamId || 'None'}</td>
+                <td>{user.team || 'None'}</td>
                 <td>
                   {user.createdAt
                     ? new Date(user.createdAt).toLocaleDateString()

@@ -47,22 +47,22 @@ export default function Workouts() {
       ) : (
         <div className="row">
           {workouts.map((workout) => (
-            <div key={workout._id} className="col-md-4 mb-3">
+            <div key={workout._id || workout.title} className="col-md-4 mb-3">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">{workout.name || 'Workout'}</h5>
+                  <h5 className="card-title">{workout.title || 'Workout'}</h5>
                   <p className="card-text">
-                    {workout.description || 'No description'}
+                    Focus: {workout.focusArea || 'N/A'}
+                  </p>
+                  <p className="card-text">
+                    <small>Difficulty: {workout.difficulty || 'N/A'}</small>
                   </p>
                   <p className="card-text">
                     <small>
-                      Exercises: {workout.exercises?.length || 0}
-                    </small>
-                  </p>
-                  <p className="card-text">
-                    <small>
-                      Suggested for:{' '}
-                      {workout.suggestedFor?.join(', ') || 'Everyone'}
+                      Duration:{' '}
+                      {workout.durationMinutes
+                        ? `${workout.durationMinutes} min`
+                        : 'N/A'}
                     </small>
                   </p>
                 </div>

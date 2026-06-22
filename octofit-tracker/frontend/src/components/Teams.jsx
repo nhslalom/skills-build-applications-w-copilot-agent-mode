@@ -47,11 +47,13 @@ export default function Teams() {
       ) : (
         <div className="row">
           {teams.map((team) => (
-            <div key={team._id} className="col-md-4 mb-3">
+            <div key={team._id || team.name} className="col-md-4 mb-3">
               <div className="card">
                 <div className="card-body">
                   <h5 className="card-title">{team.name || 'Team'}</h5>
-                  <p className="card-text">{team.description || 'No description'}</p>
+                  <p className="card-text">
+                    Mascot: {team.mascot || 'N/A'}
+                  </p>
                   <p className="card-text">
                     <small>Members: {team.members?.length || 0}</small>
                   </p>

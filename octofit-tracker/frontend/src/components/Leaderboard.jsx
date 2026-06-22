@@ -50,17 +50,16 @@ export default function Leaderboard() {
             <tr>
               <th>Rank</th>
               <th>User</th>
-              <th>Score</th>
-              <th>Activities</th>
-            </tr>
+              <th>Team</th>
+              <th>Points</th>
           </thead>
           <tbody>
             {leaderboard.map((entry, index) => (
-              <tr key={entry._id || index}>
+              <tr key={entry._id || entry.user || index}>
                 <td>{index + 1}</td>
-                <td>{entry.userId?.name || entry.userId || 'Unknown'}</td>
-                <td>{entry.score || 0}</td>
-                <td>{entry.activityCount || 0}</td>
+                <td>{entry.user || 'Unknown'}</td>
+                <td>{entry.team || 'N/A'}</td>
+                <td>{entry.points || 0}</td>
               </tr>
             ))}
           </tbody>
