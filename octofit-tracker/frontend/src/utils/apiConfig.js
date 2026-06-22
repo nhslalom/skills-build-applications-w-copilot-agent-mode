@@ -14,8 +14,11 @@ const getApiBaseUrl = () => {
     return 'http://localhost:8000/api';
   }
 
+  if (codespaceName === 'localhost' || codespaceName === '127.0.0.1') {
+    return 'http://localhost:8000/api';
+  }
+
   return `https://${codespaceName}-8000.app.github.dev/api`;
-};
 
 export const apiConfig = {
   baseUrl: getApiBaseUrl(),
