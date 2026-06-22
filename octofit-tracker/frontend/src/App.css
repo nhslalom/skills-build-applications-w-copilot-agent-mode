@@ -1,0 +1,179 @@
+/* OctoFit Tracker Application Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+/* Layout */
+#root {
+  height: 100vh;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+/* Navigation Styles */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+/* Main Content */
+main {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Cards */
+.card {
+  border: 1px solid #dee2e6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Tables */
+.table {
+  background-color: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Alerts */
+.alert {
+  border-radius: 4px;
+  border: none;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  border-top: 1px solid #dee2e6;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Home Page */
+.text-center h1 {
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.text-center .lead {
+  color: #666;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.text-center ul {
+  text-align: left;
+  display: inline-block;
+  font-size: 1.05rem;
+}
+
+.text-center ul li {
+  margin-bottom: 0.75rem;
+  color: #555;
+}
+
+/* Loading and Error States */
+.container.py-4 {
+  background-color: white;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  main {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+}
+
