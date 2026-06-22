@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { fetchApi, apiConfig } from '../utils/apiConfig';
 
+// API Endpoint: https://${VITE_CODESPACE_NAME}-8000.app.github.dev/api/teams
+
 export default function Teams() {
   const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true);
