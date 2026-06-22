@@ -12,7 +12,7 @@ import workoutsRouter from './routes/workouts';
 dotenv.config();
 
 const app = express();
-const port = Number(process.env.PORT) || 8000;
+const port = 8000;
 const codespaceName = process.env.CODESPACE_NAME;
 const baseUrl = codespaceName
   ? `https://${codespaceName}-8000.app.github.dev`
@@ -48,7 +48,7 @@ app.use('/api/workouts', workoutsRouter);
 const startServer = async () => {
   try {
     await connectDatabase();
-    app.listen(port, () => {
+    app.listen(port, '0.0.0.0', () => {
       console.log(`Backend listening on port ${port}`);
     });
   } catch (error) {
